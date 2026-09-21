@@ -51,4 +51,18 @@ public class GewinnModel {
         }
 
     }
+
+    public boolean hatGewonnen(){
+        if(gesamtPunkte >= 100){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean hatVerloren(){
+        if(gesamtPunkte <= 0){
+            return true;
+        }
+        return false;
+    }
 }

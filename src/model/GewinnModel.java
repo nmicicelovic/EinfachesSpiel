@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Random;
+
 public class GewinnModel {
 
     private int gesamtPunkte;
@@ -24,5 +26,29 @@ public class GewinnModel {
 
     public int getRundenErgebnis() {
         return rundenErgebnis;
+    }
+
+    public void berechneComputerZahl() {
+        Random randomZahl;
+        randomZahl= new Random();
+        this.computerZahl = randomZahl.nextInt(9) + 1;
+    }
+
+
+    public void berechneRunde(int spielerZahl) {
+        this.spielerZahl = spielerZahl;
+        berechneComputerZahl();
+
+        if(spielerZahl -  getComputerZahl()== 1 || spielerZahl - getComputerZahl() == -1 ){
+            gesamtPunkte = gesamtPunkte + 5;
+            rundenErgebnis = 5;
+        }else if(spielerZahl - getComputerZahl() == 0) {
+            gesamtPunkte = gesamtPunkte + 20;
+            rundenErgebnis = 20;
+        } else if(spielerZahl - getComputerZahl() > 1 || spielerZahl - getComputerZahl() < -1 ) {
+            gesamtPunkte = gesamtPunkte -10 ;
+            rundenErgebnis = 10;
+        }
+
     }
 }

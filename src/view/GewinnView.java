@@ -10,6 +10,7 @@ public class GewinnView extends JFrame {
     private JButton nocheinmalButton;
 
     public GewinnView() {
+
         setTitle("Zahlen-Gewinnspiel (v1.0)");
         setSize(500, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

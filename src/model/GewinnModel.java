@@ -47,7 +47,7 @@ public class GewinnModel {
             rundenErgebnis = 20;
         } else if(spielerZahl - getComputerZahl() > 1 || spielerZahl - getComputerZahl() < -1 ) {
             gesamtPunkte = gesamtPunkte -10 ;
-            rundenErgebnis = 10;
+            rundenErgebnis = -10;
         }
 
     }

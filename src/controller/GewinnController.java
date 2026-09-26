@@ -35,6 +35,8 @@ public class GewinnController {
         view.getSpielerEingabeFeld().setText("");
         view.getComputerAnzeigeFeld();
         view.getRundenErgebnisWertLabel().setText("Tippe eine Zahl von bis 1 bis 9");
+        view.getSpielerEingabeFeld().setEditable(true);
+        view.getComputerAnzeigeFeld().setEditable(true);
     }
     private void verarbeiteEingabe() {
         String text = view.getSpielerEingabeFeld().getText();
@@ -57,13 +59,17 @@ public class GewinnController {
                 ergebnisText = "Gewonnen!";
             } else if (model.hatVerloren()) {
                 ergebnisText = "Verloren";
+
             }
 
             view.getRundenErgebnisWertLabel().setText(ergebnisText);
             view.getGesamtPunkteWertLabel().setText("Gesamtpunkte: " + model.getGesamtPunkte());
+            view.getSpielerEingabeFeld().setEditable(false);
+            view.getNocheinmalButton().setEnabled(true);
 
         } catch (NumberFormatException ex) {
             view.getRundenErgebnisWertLabel().setText("Bitte gültige Zahl eingeben!");
+
         }
     }
 

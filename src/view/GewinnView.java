@@ -50,6 +50,7 @@ public class GewinnView extends JFrame {
 
         nocheinmalButton = new JButton("Noch einmal!");
         add(nocheinmalButton, BorderLayout.SOUTH);
+        nocheinmalButton.setEnabled(false);
 
         setVisible(true);
     }

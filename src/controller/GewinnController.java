@@ -1,6 +1,8 @@
 package controller;
 import view.GewinnView;
 import model.GewinnModel;
+
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -56,10 +58,14 @@ public class GewinnController {
             }
 
             if (model.hatGewonnen()) {
-                ergebnisText = "Gewonnen!";
+                view.getRundenErgebnisWertLabel().setBackground(Color.GREEN);
+                view.getGesamtPunkteWertLabel().setBackground(Color.GREEN);
             } else if (model.hatVerloren()) {
-                ergebnisText = "Verloren";
-
+                view.getGesamtPunkteWertLabel().setBackground(Color.RED);
+                view.getRundenErgebnisWertLabel().setBackground(Color.RED);
+            }else{
+                view.getGesamtPunkteWertLabel().setBackground(Color.WHITE);
+                view.getRundenErgebnisWertLabel().setBackground(Color.WHITE);
             }
 
             view.getRundenErgebnisWertLabel().setText(ergebnisText);

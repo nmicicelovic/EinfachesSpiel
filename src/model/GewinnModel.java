@@ -1,5 +1,5 @@
 package model;
-
+import view.GewinnView;
 import java.util.Random;
 
 public class GewinnModel {

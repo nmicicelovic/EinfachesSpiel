@@ -41,10 +41,10 @@ public class GewinnModel {
 
         if(spielerZahl -  getComputerZahl()== 1 || spielerZahl - getComputerZahl() == -1 ){
             gesamtPunkte = gesamtPunkte + 5;
-            rundenErgebnis = 5;
+            rundenErgebnis = +5;
         }else if(spielerZahl - getComputerZahl() == 0) {
             gesamtPunkte = gesamtPunkte + 20;
-            rundenErgebnis = 20;
+            rundenErgebnis = +20;
         } else if(spielerZahl - getComputerZahl() > 1 || spielerZahl - getComputerZahl() < -1 ) {
             gesamtPunkte = gesamtPunkte -10 ;
             rundenErgebnis = -10;

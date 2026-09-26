@@ -22,6 +22,19 @@ public class GewinnController {
             }
         });
 
+        view.getNocheinmalButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                nocheinaml();
+            }
+        });
+
+    }
+
+    private void nocheinaml() {
+        view.getSpielerEingabeFeld().setText("");
+        view.getComputerAnzeigeFeld();
+        view.getRundenErgebnisWertLabel().setText("Tippe eine Zahl von bis 1 bis 9");
     }
     private void verarbeiteEingabe() {
         String text = view.getSpielerEingabeFeld().getText();
@@ -34,10 +47,10 @@ public class GewinnController {
             int ergebnis = model.getRundenErgebnis();
             String ergebnisText;
             if (ergebnis == 0) {
-                ergebnisText = " + " + ergebnis;
+                ergebnisText = "" + ergebnis;
 
             } else {
-                ergebnisText = "+" + ergebnis;
+                ergebnisText = "" + ergebnis;
             }
 
             if (model.hatGewonnen()) {
